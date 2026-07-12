@@ -1,3 +1,7 @@
+output "kusto_cosmosdb_data_connections_id" {
+  description = "Map of id values across all kusto_cosmosdb_data_connections, keyed the same as var.kusto_cosmosdb_data_connections"
+  value       = { for k, v in azurerm_kusto_cosmosdb_data_connection.kusto_cosmosdb_data_connections : k => v.id }
+}
 output "kusto_cosmosdb_data_connections_cosmosdb_container_id" {
   description = "Map of cosmosdb_container_id values across all kusto_cosmosdb_data_connections, keyed the same as var.kusto_cosmosdb_data_connections"
   value       = { for k, v in azurerm_kusto_cosmosdb_data_connection.kusto_cosmosdb_data_connections : k => v.cosmosdb_container_id }
